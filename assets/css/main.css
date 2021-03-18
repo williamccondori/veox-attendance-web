@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.veox-input-sm {
+  @apply w-full text-sm py-1 px-2 border-2 rounded focus:outline-none focus:border-indigo-300 focus:ring-2 focus:ring-indigo-300 focus:ring-opacity-50 text-gray-500
+}
+
+.veox-input {
+  @apply w-full text-sm py-2 px-3 border-2 rounded focus:outline-none focus:border-indigo-300 focus:ring-2 focus:ring-indigo-300 focus:ring-opacity-50 text-gray-500
+}
+
+.veox-btn-sm {
+  @apply text-sm justify-center py-1 px-2 border border-transparent font-medium rounded text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:ring-opacity-50
+}
+
+.veox-btn-flat-sm {
+  @apply text-sm justify-center py-1 px-2 border border-transparent font-medium rounded text-indigo-700  focus:outline-none hover:underline
+}
+
+.veox-btn {
+  @apply text-sm justify-center py-2 px-3 border border-transparent font-medium rounded text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:ring-opacity-50
+}
+
+.veox-label {
+  @apply block font-semibold text-gray-500 text-sm my-2
+}
+
+.veox-title {
+  @apply block font-semibold text-gray-900 text-xl my-4
+}
+
+
+.veox-btn {
+  @apply text-sm justify-center py-2 px-3 border border-transparent font-medium rounded text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:ring-opacity-50;
+}

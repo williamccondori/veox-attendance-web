@@ -1,0 +1,134 @@
+<template>
+  <div>
+    <!-- Principal drawer-->
+    <aside
+      class="transform top-0 left-0 w-3/5 lg:w-1/4 bg-white fixed h-full overflow-auto ease-in-out transition-all duration-300 z-30 p-20"
+      :class="isOpen ? 'translate-x-0' : '-translate-x-full'"
+    >
+      <button v-on:click="isOpen = false" class="focus:outline-none">
+        <svg
+          class="h-5 w-5 text-gray-500"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </button>
+      <div>
+        <div class="mt-5 mb-10">
+          <h2 class="block text-xs font-bold text-indigo-700 tracking-wider">
+            VEOX
+          </h2>
+          <h1 class="block text-md font-semibold text-gray-500">Attendance</h1>
+        </div>
+        <div>
+          <h1 class="block mb-2 text-gray-500 font-semibold text-sm">
+            My workspaces
+          </h1>
+          <hr class="mb-4" />
+          <ul v-if="workspaces.length > 0">
+            <li v-for="workspace in workspaces" :key="workspace.name">
+              <button
+                class="py-2 px-3 hover:bg-gray-100 rounded font-semibold text-sm text-gray-400 uppercase focus:outline-none"
+              >
+                <img
+                  class="w-8 h-8 mr-2 rounded-sm"
+                  v-bind:src="workspace.imageProfile"
+                  v-bind:alt="workspace.imageProfile"
+                />
+                <span class="mt-1">
+                  {{ workspace.name }}
+                </span>
+              </button>
+            </li>
+          </ul>
+          <nuxt-link
+            to="/admin/workspace"
+            v-if="workspaces.length == 0"
+            class="veox-btn"
+          >
+            Create a new workspace
+          </nuxt-link>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Overlay -->
+    <transition
+      enter-class="opacity-0"
+      enter-active-class="ease-out transition-medium"
+      enter-to-class="opacity-100"
+      leave-class="opacity-100"
+      leave-active-class="ease-out transition-medium"
+      leave-to-class="opacity-0"
+    >
+      <div
+        @keydown.esc="isOpen = false"
+        v-show="isOpen"
+        class="z-10 fixed inset-0 transition-opacity"
+      >
+        <div
+          @click="isOpen = false"
+          class="absolute inset-0 bg-gray-800 opacity-50"
+          tabindex="0"
+        ></div>
+      </div>
+    </transition>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'PrincipalDrawer',
+  data: function () {
+    return {
+      workspaces: [],
+    }
+  },
+  created() {
+    this.getWorkspaces()
+  },
+  computed: {
+    isOpen: {
+      get() {
+        return this.$store.state.isPrincipalPanel
+      },
+      set(_value) {
+        this.$store.commit('SET_IS_PRINCIPAL_PANEL', false)
+      },
+    },
+  },
+  watch: {
+    isOpen: {
+      immediate: true,
+      handler(isOpen) {
+        if (process.client) {
+          if (isOpen) {
+            document.body.style.setProperty('overflow', 'hidden')
+          } else document.body.style.removeProperty('overflow')
+        }
+      },
+    },
+  },
+  methods: {
+    closePrincipalDrawer() {
+      this.$store.commit('SET_IS_PRINCIPAL_PANEL', false)
+    },
+    async getWorkspaces() {
+      await this.$axios
+        .get('workspaces')
+        .then((res) => {
+          this.workspaces = res.data.data
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+    },
+  },
+}
+</script>
