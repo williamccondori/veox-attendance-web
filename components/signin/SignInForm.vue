@@ -1,11 +1,11 @@
 <template>
-  <div class="py-8 border border-gray-100 shadow-md px-14">
+  <div class="py-8 px-14">
     <form @submit.prevent="userLogin">
       <div class="mb-10 font-normal text-center text-gray-500 text-md">
         Sign in to continue to:<br />
         <span class="font-bold">Attendance</span>
       </div>
-      <div class="mb-4">
+      <div class="mb-2">
         <input
           type="email"
           v-model="login.email"
@@ -21,9 +21,10 @@
           class="veox-input"
         />
       </div>
-      <div class="mb-10">
-        <button type="submit" class="w-full veox-btn">Sign in</button>
-      </div>
+
+      <!-- Submit button-->
+      <button type="submit" class="w-full mb-10 veox-btn">Sign in</button>
+      
       <div class="text-center">
         <nuxt-link to="/signup" class="text-sm text-blue-800 hover:underline"
           >Sign up for an account</nuxt-link

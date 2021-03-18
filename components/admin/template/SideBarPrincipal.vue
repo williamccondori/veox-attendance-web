@@ -1,8 +1,8 @@
 <template>
   <div>
     <!-- Principal drawer-->
-    <aside
-      class="fixed top-0 left-0 z-30 w-3/5 h-full p-20 overflow-auto transition-all duration-300 ease-in-out transform bg-white lg:w-1/4"
+    <div
+      class="fixed top-0 z-30 w-3/5 h-full p-20 overflow-auto transition-all duration-300 ease-in-out transform bg-white -left-1 lg:w-1/4"
       :class="isOpen ? 'translate-x-0' : '-translate-x-full'"
     >
       <button v-on:click="isOpen = false" class="focus:outline-none">
@@ -20,7 +20,7 @@
         </svg>
       </button>
       <div>
-        <div class="mt-5 mb-10">
+        <div class="mt-4 mb-8">
           <h2 class="block text-xs font-bold tracking-wider text-blue-800">
             VEOX
           </h2>
@@ -31,6 +31,13 @@
             My workspaces
           </h1>
           <hr class="mb-4" />
+          <nuxt-link
+            to="/admin/workspace"
+            v-if="workspaces.length == 0"
+            class="mb-4 veox-btn-sm"
+          >
+            Create a new workspace
+          </nuxt-link>
           <ul v-if="workspaces.length > 0">
             <li v-for="workspace in workspaces" :key="workspace.name">
               <button
@@ -47,16 +54,9 @@
               </button>
             </li>
           </ul>
-          <nuxt-link
-            to="/admin/workspace"
-            v-if="workspaces.length == 0"
-            class="veox-btn"
-          >
-            Create a new workspace
-          </nuxt-link>
         </div>
       </div>
-    </aside>
+    </div>
 
     <!-- Overlay -->
     <transition

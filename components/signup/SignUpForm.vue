@@ -1,33 +1,40 @@
 <template>
-  <div class="py-8 border border-gray-100 shadow-md px-14">
+  <div class="py-8 px-14">
     <form @submit.prevent="userRegister">
       <div class="mb-10 font-normal text-center text-gray-500 text-md">
         Sign up for an account to continue to:<br />
         <span class="font-bold">Attendance</span>
       </div>
-      <div class="mb-3">
-        <label for="name" class="veox-label"
-          >Name <span class="text-red-500 text-md">*</span></label
-        >
-        <input
-          type="text"
-          id="name"
-          v-model="register.name"
-          class="veox-input-sm"
-        />
+      <div class="flex mb-2 space-x-2">
+        <!-- Name -->
+        <div>
+          <label for="name" class="veox-label"
+            >Name <span class="text-red-500 text-md">*</span></label
+          >
+          <input
+            type="text"
+            id="name"
+            v-model="register.name"
+            class="veox-input-sm"
+          />
+        </div>
+
+        <!-- Last name -->
+        <div>
+          <label for="lastName" class="veox-label"
+            >Last name <span class="text-red-500 text-md">*</span></label
+          >
+          <input
+            type="text"
+            id="lastName"
+            v-model="register.lastName"
+            class="veox-input-sm"
+          />
+        </div>
       </div>
-      <div class="mb-3">
-        <label for="lastName" class="veox-label"
-          >Last name <span class="text-red-500 text-md">*</span></label
-        >
-        <input
-          type="text"
-          id="lastName"
-          v-model="register.lastName"
-          class="veox-input-sm"
-        />
-      </div>
-      <div class="mb-3">
+
+      <!-- Email -->
+      <div class="mb-2">
         <label for="email" class="veox-label"
           >Email <span class="text-red-500 text-md">*</span></label
         >
@@ -38,7 +45,9 @@
           class="veox-input-sm"
         />
       </div>
-      <div class="mb-3">
+
+      <!-- Password -->
+      <div class="mb-2">
         <label for="password" class="veox-label"
           >Password <span class="text-red-500 text-md">*</span></label
         >
@@ -49,7 +58,9 @@
           class="veox-input-sm"
         />
       </div>
-      <div class="mb-3">
+
+      <!-- Password confirmation-->
+      <div class="mb-4">
         <label for="confirmationPassword" class="veox-label"
           >Confirmation password
           <span class="text-red-500 text-md">*</span></label
@@ -61,12 +72,13 @@
           class="veox-input-sm"
         />
       </div>
-      <div class="mb-10">
-        <button type="submit" class="w-full veox-btn">Sign up</button>
-      </div>
+
+      <!-- Submit button-->
+      <button type="submit" class="w-full mb-10 veox-btn">Sign up</button>
+
       <div class="text-center">
         <nuxt-link to="/signin" class="text-sm text-blue-800 hover:underline"
-          >Do you already have an account? Sign in</nuxt-link
+          >Already have an account? Sign in</nuxt-link
         >
       </div>
     </form>

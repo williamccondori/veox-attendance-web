@@ -1,6 +1,6 @@
 <template>
   <div>
-    <side-bar-principal />
+    <side-bar-principal/>
     <div class="flex">
       <!-- Sidebar container -->
       <aside class="attendanace-sidebar flex | h-screen | sticky top-0">

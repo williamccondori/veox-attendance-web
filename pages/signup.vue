@@ -15,7 +15,9 @@
           />
         </svg>
       </nuxt-link>
-      <sign-up-form class="w-full my-10 bg-white rounded md:w-6/12 lg:w-4/12" />
+      <sign-up-form
+        class="w-full my-10 bg-white border border-gray-100 rounded md:w-96"
+      />
     </div>
   </div>
 </template>
@@ -33,3 +35,9 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.w-96 {
+  width: 500px;
+}
+</style>
