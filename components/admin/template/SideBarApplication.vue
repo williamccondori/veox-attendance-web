@@ -1,6 +1,6 @@
 <template>
   <div
-    class="h-full bg-indigo-900 dark:bg-gray-900 flex flex-wrap content-between"
+    class="flex flex-wrap content-between h-full bg-blue-900 dark:bg-gray-900"
   >
     <ul class="p-2">
       <li class="p-2 mb-8">
@@ -9,7 +9,7 @@
       <li>
         <NuxtLink
           to="/admin/workspace"
-          class="block rounded p-3 hover:bg-indigo-700 focus:outline-none text-white"
+          class="block p-3 text-white rounded hover:bg-blue-800 focus:outline-none"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +31,7 @@
       <li>
         <a
           @click="openPrincipalPanel"
-          class="block rounded p-3 hover:bg-indigo-700 focus:outline-none text-white cursor-pointer"
+          class="block p-3 text-white rounded cursor-pointer hover:bg-blue-800 focus:outline-none"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +49,7 @@
         </a>
       </li>
       <li class="p-2 mt-8">
-        <NuxtLink to="/admin/attendance">
+        <NuxtLink to="/logout">
           <img
             src="https://dummyimage.com/300x300/f34354/fff/&text=+VE+"
             alt="logo"

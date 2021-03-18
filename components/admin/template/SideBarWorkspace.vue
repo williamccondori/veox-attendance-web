@@ -1,10 +1,10 @@
 <template>
-  <div class="h-full p-10 bg-indigo-800 dark:bg-gray-900 dark:bg-opacity-95">
+  <div class="h-full p-10 bg-blue-900 dark:bg-gray-900">
     <div class="flex mb-10">
       <img
         src="https://placeimg.com/200/200/animals"
         alt="logo"
-        class="rounded-full w-10 h-10 mr-4"
+        class="w-10 h-10 mr-4 rounded-full"
       />
       <h1 class="text-gray-100 font-semibold text-xl uppercase my-1.5">VEOX</h1>
     </div>
@@ -12,7 +12,7 @@
       <li>
         <nuxt-link
           to="/admin/attendance"
-          class="flex w-full text-sm text-gray-100 font-medium hover:bg-indigo-700 rounded p-3"
+          class="flex w-full p-3 text-sm font-medium text-gray-100 rounded hover:bg-gray-900 hover:bg-opacity-10"
         >
           <svg
             class="w-5 h-5 mr-2"
@@ -33,7 +33,7 @@
       <li>
         <nuxt-link
           to="/admin/report"
-          class="flex w-full text-sm text-gray-100 font-medium hover:bg-indigo-700 rounded p-3"
+          class="flex w-full p-3 text-sm font-medium text-gray-100 rounded hover:bg-gray-900 hover:bg-opacity-10"
         >
           <svg
             class="w-5 h-5 mr-2"
@@ -54,7 +54,7 @@
       <li>
         <nuxt-link
           to="/admin/request"
-          class="flex w-full text-sm text-gray-100 font-medium hover:bg-indigo-700 rounded p-3"
+          class="flex w-full p-3 text-sm font-medium text-gray-100 rounded hover:bg-gray-900 hover:bg-opacity-10"
           ><svg
             class="w-5 h-5 mr-2"
             xmlns="http://www.w3.org/2000/svg"

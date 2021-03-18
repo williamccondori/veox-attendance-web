@@ -2,10 +2,14 @@
   <div>
     <form>
       <button class="submit">Reigster</button>
+      <sign-up-form />
     </form>
   </div>
 </template>
 
 <script>
-export default {}
+import SignUpForm from '~/components/signup/SignUpForm.vue'
+export default {
+  components: { SignUpForm },
+}
 </script>

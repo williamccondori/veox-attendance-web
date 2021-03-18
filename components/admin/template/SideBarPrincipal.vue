@@ -2,12 +2,12 @@
   <div>
     <!-- Principal drawer-->
     <aside
-      class="transform top-0 left-0 w-3/5 lg:w-1/4 bg-white fixed h-full overflow-auto ease-in-out transition-all duration-300 z-30 p-20"
+      class="fixed top-0 left-0 z-30 w-3/5 h-full p-20 overflow-auto transition-all duration-300 ease-in-out transform bg-white lg:w-1/4"
       :class="isOpen ? 'translate-x-0' : '-translate-x-full'"
     >
       <button v-on:click="isOpen = false" class="focus:outline-none">
         <svg
-          class="h-5 w-5 text-gray-500"
+          class="w-5 h-5 text-gray-500"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
           fill="currentColor"
@@ -21,20 +21,20 @@
       </button>
       <div>
         <div class="mt-5 mb-10">
-          <h2 class="block text-xs font-bold text-indigo-700 tracking-wider">
+          <h2 class="block text-xs font-bold tracking-wider text-blue-800">
             VEOX
           </h2>
-          <h1 class="block text-md font-semibold text-gray-500">Attendance</h1>
+          <h1 class="block font-semibold text-gray-500 text-md">Attendance</h1>
         </div>
         <div>
-          <h1 class="block mb-2 text-gray-500 font-semibold text-sm">
+          <h1 class="block mb-2 text-sm font-semibold text-gray-500">
             My workspaces
           </h1>
           <hr class="mb-4" />
           <ul v-if="workspaces.length > 0">
             <li v-for="workspace in workspaces" :key="workspace.name">
               <button
-                class="py-2 px-3 hover:bg-gray-100 rounded font-semibold text-sm text-gray-400 uppercase focus:outline-none"
+                class="px-3 py-2 text-sm font-semibold text-gray-400 uppercase rounded hover:bg-gray-100 focus:outline-none"
               >
                 <img
                   class="w-8 h-8 mr-2 rounded-sm"
@@ -70,7 +70,7 @@
       <div
         @keydown.esc="isOpen = false"
         v-show="isOpen"
-        class="z-10 fixed inset-0 transition-opacity"
+        class="fixed inset-0 z-10 transition-opacity"
       >
         <div
           @click="isOpen = false"
