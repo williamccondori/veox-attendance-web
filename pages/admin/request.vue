@@ -6,7 +6,7 @@
 export default {
   layout: 'admin',
   head: {
-    title: 'Request',
+    title: 'Requests',
   },
 }
 </script>

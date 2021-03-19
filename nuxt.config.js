@@ -47,14 +47,14 @@ export default {
   build: {},
 
   router: {
-    middleware: ['auth'],
+    //middleware: ['auth'],
   },
 
   // Configure auth module: https://auth.nuxtjs.org/schemes/local
   auth: {
     redirect: {
       login: '/signin',
-      logout: '/logout',
+      logout: '/signin',
       callback: '/signin',
       home: '/admin',
     },

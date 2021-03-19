@@ -6,7 +6,7 @@
 export default {
   layout: 'admin',
   head: {
-    title: 'Report',
+    title: 'Reports',
   },
 }
 </script>

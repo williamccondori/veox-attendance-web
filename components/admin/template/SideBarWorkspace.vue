@@ -12,7 +12,7 @@
       <li>
         <nuxt-link
           to="/admin/attendance"
-          class="flex w-full p-3 text-sm font-medium text-gray-100 rounded hover:bg-gray-900 hover:bg-opacity-10"
+          class="flex w-full p-3 text-sm font-semibold text-gray-100 rounded hover:bg-gray-900 hover:bg-opacity-10"
         >
           <svg
             class="w-5 h-5 mr-2"
@@ -33,7 +33,7 @@
       <li>
         <nuxt-link
           to="/admin/report"
-          class="flex w-full p-3 text-sm font-medium text-gray-100 rounded hover:bg-gray-900 hover:bg-opacity-10"
+          class="flex w-full p-3 text-sm font-semibold text-gray-100 rounded hover:bg-gray-900 hover:bg-opacity-10"
         >
           <svg
             class="w-5 h-5 mr-2"
@@ -54,7 +54,7 @@
       <li>
         <nuxt-link
           to="/admin/request"
-          class="flex w-full p-3 text-sm font-medium text-gray-100 rounded hover:bg-gray-900 hover:bg-opacity-10"
+          class="flex w-full p-3 text-sm font-semibold text-gray-100 rounded hover:bg-gray-900 hover:bg-opacity-10"
           ><svg
             class="w-5 h-5 mr-2"
             xmlns="http://www.w3.org/2000/svg"
